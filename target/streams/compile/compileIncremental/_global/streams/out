@@ -1,0 +1,6 @@
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 20 products, 7 sources, 12 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/sangria/DBSchema.scala, ${BASE}/src/main/scala/sangria/Server.scala, ${BASE}/src/main/scala/sangria/GraphQLSchema.scala, ${BASE}/src/main/scala/sangria/models/package.scala, ${BASE}/src/main/scala/sangria/GraphQLServer.scala, ${BASE}/src/main/scala/sangria/MyContext.scala, ${BASE}/src/main/scala/sangria/DAO.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0mNo changes[0m
