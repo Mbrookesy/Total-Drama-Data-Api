@@ -1,6 +1,6 @@
-## HowToGraph - GraphQL with Sangria Tutorial codebase
+## Total Drama Data API
 
-A code for GraphQL-Sangria Tutorial. Visit [HowtoGraphql.com](http://howtographql.com) to learn more.  
+A GraphQL API made to gather information from the series Total Drama.  
 
 ### Running the example
 
