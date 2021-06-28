@@ -7,7 +7,6 @@ tmp
 .history
 dist
 /.bsp
-/.idea
 /*.iml
 /*.ipr
 /out
@@ -21,3 +20,4 @@ node_modules/
 npm-debug.log
 yarn-debug.log
 yarn-error.log
+/.idea
