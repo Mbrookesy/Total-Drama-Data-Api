@@ -1,5 +1,7 @@
 ## Total Drama Data API
 
+Version: **0.1.0 (ALPHA)**
+
 A GraphQL API made to gather information from the series Total Drama.  
 
 ### Running the example
