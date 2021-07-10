@@ -2,6 +2,7 @@ package sangria
 
 import akka.http.scaladsl.model.DateTime
 import sangria.schema.{Field, ListType, ObjectType}
+import sangria.macros.derive._
 import models._
 import sangria.ast.StringValue
 import sangria.execution.deferred.{DeferredResolver, Fetcher, HasId}
@@ -22,23 +23,22 @@ object GraphQLSchema {
     }
   )
 
-  implicit val linkHasId = HasId[Link, Int](_.id)
-  implicit val userHasId = HasId[User, Int](_.id)
-  implicit val voteHasId = HasId[Vote, Int](_.id)
-
-  // 1
-  val LinkType = ObjectType[Unit, Link](
-    "Link",
-    fields[Unit, Link](
-      Field("id", IntType, resolve = _.value.id),
-      Field("url", StringType, resolve = _.value.url),
-      Field("description", StringType, resolve = _.value.description),
-      Field("createdAt", GraphQLDateTime, resolve= _.value.createdAt)
+  val IdentifiableType = InterfaceType(
+    "Identifiable",
+    fields[Unit, Identifiable](
+      Field("id", IntType, resolve = _.value.id)
     )
   )
 
-  val UserType = derivesObjectType[Unit, User]()
-  val VoteType = deriveObjectType[Unit, Vote]()
+  implicit val LinkType = deriveObjectType[Unit, Link](
+    Interfaces(IdentifiableType)
+  )
+  implicit val UserType = deriveObjectType[Unit, User](
+    Interfaces(IdentifiableType)
+  )
+  implicit val VoteType = deriveObjectType[Unit, Vote](
+    Interfaces(IdentifiableType)
+  )
 
   val linksFetcher = Fetcher(
     (ctx: MyContext, ids: Seq[Int]) => ctx.dao.getLinks(ids)
