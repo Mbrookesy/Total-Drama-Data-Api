@@ -1,4 +1,4 @@
-## Total Drama Data API
+## Total Drama Stats API
 
 Version: **0.1.2 (ALPHA)**
 
